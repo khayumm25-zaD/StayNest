@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:staynest-booking-test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+jwt:
+  secret: test-secret-key-1234567890abcdefghijklmnopqrstuvwxyz
+eureka:
+  client:
+    enabled: false
+property-service:
+  url: http://localhost

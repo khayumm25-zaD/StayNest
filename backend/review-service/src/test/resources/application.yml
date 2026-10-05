@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:review-tests;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  cloud:
+    discovery:
+      enabled: false
+eureka:
+  client:
+    enabled: false
+jwt:
+  secret: "test-only-review-jwt-signing-secret-32-bytes-minimum"
+booking-service:
+  url: http://localhost:9999

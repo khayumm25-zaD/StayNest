@@ -1,0 +1,28 @@
+server:
+  port: 0
+spring:
+  application:
+    name: BOOKING-SERVICE
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:staynest_booking_service}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+jwt:
+  secret: ${JWT_SECRET}
+property-service:
+  url: ${PROPERTY_SERVICE_URL:http://PROPERTY-SERVICE}
+payment-service:
+  api-key: ${PAYMENT_SERVICE_API_KEY:}
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
